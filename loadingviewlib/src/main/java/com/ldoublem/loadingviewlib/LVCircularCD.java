@@ -15,7 +15,7 @@ import android.view.animation.RotateAnimation;
  * Created by lumingmin on 16/6/20.
  */
 
-public class LVCircularCD extends View {
+    public class LVCircularCD extends View {
 
     private Paint mPaint;
 
@@ -99,9 +99,23 @@ public class LVCircularCD extends View {
 
     }
 
+    public void setViewColor(int color)
+    {
+        mPaint.setColor(color);
+        postInvalidate();
+    }
+
+
+
     public void startAnim() {
         stopAnim();
         mProgerssRotateAnim.setDuration(1500);
+        startAnimation(mProgerssRotateAnim);
+    }
+
+    public void startAnim(int time) {
+        stopAnim();
+        mProgerssRotateAnim.setDuration(time);
         startAnimation(mProgerssRotateAnim);
     }
 
